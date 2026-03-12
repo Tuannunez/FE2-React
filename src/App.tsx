@@ -1,16 +1,34 @@
 import { Toaster } from "react-hot-toast";
 import { Link } from "react-router-dom";
-// import { Button } from "antd";
-// import { Layout } from "antd";
-// import { Form, Input } from "antd";
-import Lab1 from "./pages/lab1";
+import { Table }from "antd";
+import { Layout } from "antd";
+import { Form, Input, Button } from "antd";
+// import Lab1 from "./pages/lab1";
 
-// const { Header, Content, Footer } = Layout;
-// const onFinish = (values: any) => {
-//     console.log(values);
-//}
+
+const { Header, Content, Footer } = Layout;
+const onFinish = (values: any) => {
+    console.log(values);
+}
 function App() {
+  const onFinish = (values: any) => {
+    console.log("onFinish");
+    console.log(values);
+};
+
+const columns = [
+  {title: "Họ và tên", dataIndex: "name"},
+  {title: "Tuổi", dataIndex: "Age"},
+  {title: "Môn học", dataIndex: "object"},
+];
+
+const data = [
+  {key: 1, name: "nam", age: 27, object: "Lý"},
+  {key: 1, name: "nam", age: 27, object: "Lý"},
+];
   return (
+
+    
     <>
       <nav className="bg-blue-600 text-white shadow">
         <div className="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
@@ -42,7 +60,7 @@ function App() {
       </nav>
 
       {/* MAIN CONTENT */}
-      {/* <div className="max-w-6xl mx-auto mt-10 px-4 text-center">
+      <div className="max-w-6xl mx-auto mt-10 px-4 text-center">
         <h1 className="text-4xl font-bold mb-4">Chào mừng đến với WEB2091</h1>
        <Button type="primary">Click me</Button>
        <Button type="default">Click me</Button>
@@ -66,8 +84,10 @@ function App() {
       </Content>
       <Footer>Content</Footer>
     </Layout>
-      </div> */}
-<Lab1/>
+      <Table columns={columns} dataSource={data} />
+      </div>
+    
+
       <Toaster />
     </>
   );

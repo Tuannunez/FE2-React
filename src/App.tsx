@@ -3,10 +3,12 @@ import { Link } from "react-router-dom";
 import { Table }from "antd";
 import { Layout } from "antd";
 import { Form, Input, Button } from "antd";
-// import Lab1 from "./pages/lab1";
 
 
-const { Header, Content, Footer } = Layout;
+import StoryForm from "./pages/lab4";
+
+
+
 const onFinish = (values: any) => {
     console.log(values);
 }
@@ -68,7 +70,8 @@ const data = [
        <Button type="link">Click me</Button>
        <Button type="text">Click me</Button>
         <Layout>
-      <Header style={{ color: "white" }}>Header</Header>
+          <StoryForm/>
+      {/* <Header style={{ color: "white" }}>Header</Header>
       <Content style={{ padding: 20 }}>
         <Form onFinish={onFinish}>
           <Form.Item label="Usename" name="usename">
@@ -82,7 +85,7 @@ const data = [
         </Form>
         
       </Content>
-      <Footer>Content</Footer>
+      <Footer>Content</Footer> */}
     </Layout>
       <Table columns={columns} dataSource={data} />
       </div>

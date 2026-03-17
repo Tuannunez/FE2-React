@@ -1,4 +1,28 @@
 {
-  "products": [],
+  "stories": [
+    {
+      "title": "Truyện ma chưa kể",
+      "categoryId": 4,
+      "id": 1
+    }
+  ],
+  "categories": [
+    {
+      "id": 1,
+      "title": "Hành động"
+    },
+    {
+      "id": 2,
+      "title": "Tình cảm"
+    },
+    {
+      "id": 3,
+      "title": "Hài hước"
+    },
+    {
+      "id": 4,
+      "title": "Kinh dị"
+    }
+  ],
   "users": []
 }

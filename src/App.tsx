@@ -5,7 +5,8 @@ import { Layout } from "antd";
 import { Form, Input, Button } from "antd";
 
 
-import StoryForm from "./pages/lab4";
+// import StoryForm from "./pages/lab4";
+import { StoryList } from "./pages/lab5";
 
 
 
@@ -70,7 +71,8 @@ const data = [
        <Button type="link">Click me</Button>
        <Button type="text">Click me</Button>
         <Layout>
-          <StoryForm/>
+          <StoryList/>
+          {/* <StoryForm/> */}
       {/* <Header style={{ color: "white" }}>Header</Header>
       <Content style={{ padding: 20 }}>
         <Form onFinish={onFinish}>

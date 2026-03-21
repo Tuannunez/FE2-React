@@ -1,5 +1,5 @@
 import { Toaster } from "react-hot-toast";
-import { Link } from "react-router-dom";
+import { Link, Route, Routes } from "react-router-dom";
 import { Table }from "antd";
 import { Layout } from "antd";
 import { Form, Input, Button } from "antd";
@@ -7,6 +7,7 @@ import { Form, Input, Button } from "antd";
 
 // import StoryForm from "./pages/lab4";
 import { StoryList } from "./pages/lab5";
+import EditStory from "./pages/lap6";
 
 
 
@@ -61,7 +62,10 @@ const data = [
           </div>
         </div>
       </nav>
-
+      <Routes>
+          <Route path="/list" element={<StoryList />} />
+        <Route path="/edit/:id" element={<EditStory/>}></Route>
+      </Routes>
       {/* MAIN CONTENT */}
       <div className="max-w-6xl mx-auto mt-10 px-4 text-center">
         <h1 className="text-4xl font-bold mb-4">Chào mừng đến với WEB2091</h1>

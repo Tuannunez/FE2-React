@@ -2,6 +2,7 @@ import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import { Button, Image, Popconfirm, Table, Input } from "antd";
 import axios from "axios";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 export function StoryList() {
   const [search, setSearch] = useState("");
@@ -24,7 +25,6 @@ export function StoryList() {
     },
   });
 
-  // 🔍 search filter
   const filteredData = data?.filter((item: any) =>
     item.title.toLowerCase().includes(search.toLowerCase())
   );
@@ -58,22 +58,29 @@ export function StoryList() {
     {
       title: "Action",
       render: (_: any, record: any) => (
-        <Popconfirm
-          title="Xóa truyện"
-          description="Bạn chắc chưa?"
-          okText="Có"
-          cancelText="Không"
-          onConfirm={() => mutate(record.id)}
-        >
-          <Button danger>Xóa</Button>
-        </Popconfirm>
+        <>
+          <Popconfirm
+            title="Xóa truyện"
+            description="Bạn chắc chưa?"
+            okText="Có"
+            cancelText="Không"
+            onConfirm={() => mutate(record.id)}
+          >
+            <Button danger>Xóa</Button>
+
+          </Popconfirm>
+          <Link to={`/edit/${record.id}`}>
+          <Button>Sửa</Button>
+          </Link>
+          </>
+
       ),
     },
   ];
 
   return (
     <>
-       {/* Bài 5 */}
+      {/* Bài 5 */}
       <Input
         placeholder="Tìm truyện..."
         style={{ marginBottom: 20, width: 300 }}
